@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    footer, nav{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 20px;
+        background: #000000;
+        padding: 10px;
+    }
+    button {
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button1 {
+  background-color: #04AA6D; 
+}
+
+.button2 {
+  background-color: white;
+}
+
+.button2:hover {background-color: red;}
+
+
+.button1:hover {
+  background-color: #ffffff;
+  color: black;
+}
+    .age-group{
+        padding: 5px;
+        margin: 5px;
+    }
+    nav{
+        font-size: large;
+    }
+    #results {
+    margin-top: 20px;
+}
+    </style>
+   
+</head>
+<body>
+    <center>
+    <div>
+        <nav style="color:#ffffff">
+            <b><h1>Care este varsta ta?</h1></b>
+        </nav>
+        <form id="age-poll">
+        <div class="age-group">
+            <input type="radio" id="age-10-14" name="age" value="10-14">
+            <label for="age-10-14">10-14</label>
+        </div>
+        <div class="age-group">
+            <input type="radio" id="age-15-18" name="age" value="15-18">
+            <label for="age-15-18">15-18</label>
+        </div>
+        <div class="age-group">
+            <input type="radio" id="age-19-30" name="age" value="19-30">
+            <label for="age-19-30">19-30</label>
+        </div>
+        <div class="age-group">
+            <input type="radio" id="age-31-40" name="age" value="31-40">
+            <label for="age-31-40">31-40</label>
+        </div>
+        <div class="age-group">
+            <input type="radio" id="age-41+" name="age" value="41+">
+            <label for="age-41+">Mai mare ca 41</label>
+        </div>
+        <footer>
+            <button class="button1" type="submit">Voteaza</button>
+            <button class="button2" id="show-results" style=" color: black;">Vizualizeaza</button>
+        </footer>
+        </form>
+
+        <div id="results"></div>
+    </div>
+        <script src="main.js"></script>
+    </center>
+</body>
+</html>
