@@ -1,56 +1,70 @@
-const sq = document.getElementById('letter');
-        const sq1 = document.getElementById('1');
-        const sq2 = document.getElementById('2');
-        const sq3 = document.getElementById('3');
-        const sq4 = document.getElementById('4');
-        const sq5 = document.getElementById('5');
+const setAns = (Ans) => document.getElementById("ans").textContent = Ans
 
-        sq1.addEventListener('mouseover', function(){
-            sq.style.transition = 'background-color 1s ease';
-            document.body.style.backgroundColor='coral';
-        });
-        sq2.addEventListener('mouseover', function(){
-            sq.style.transition = 'background-color 1s ease';
-            document.body.style.backgroundColor='#FF7F7F';
-        });
-        sq3.addEventListener('mouseover', function(){
-            sq.style.transition = 'background-color 1s ease';
-            document.body.style.backgroundColor='lightgreen';
-        });
-        sq4.addEventListener('mouseover', function(){
-            sq.style.transition = 'background-color 1s ease';
-            document.body.style.backgroundColor='lightblue';
-        });
-        sq5.addEventListener('mouseover', function(){
-            sq.style.transition = 'background-color 1s ease';
-            document.body.style.backgroundColor='#CBC3E3';
-        });
+const c1 = () => {
+    const birthdate = new Date(prompt("date of birth"))
+    const neg = new Date().getTime() - birthdate.getTime()
+    const days = Math.floor(neg / 86400000)
+    const years = Math.floor(neg / 31556952000)
+    setAns(`${days} days. ${years} years.`)
+}
 
-        sq.addEventListener('mouseout', function(){
-            sq.style.transition = 'background-color 1s ease';
-            document.body.style.backgroundColor='lightgray';
-        });
+const c3 = () => {
+    const date = new Date(prompt("give the date"))
+    const start = new Date(date.getFullYear(), 0, 0)
+    const neg = date.getTime() - start.getTime()
+    const day = Math.floor(neg / 86400000)
+    setAns(`It's the ${day} of the year`)
+}
 
-        const text = document.getElementById('button');
-        text.addEventListener('mouseover', function(){
-            text.textContent = 'THANKS';
-        });
-        text.addEventListener('mouseout', function(){
-            text.textContent = 'HOVER ME';
-        });
+const c4 = () => {
+    const n = Number(prompt("give n"))
+    const ms = new Date().getTime() + Math.floor(n * 86400000)
+    const date = new Date(ms)
+    setAns(date.toDateString())
+}
 
-        const num1 = document.getElementById('11');
-        num1.addEventListener('mouseover', function(){
-            num1.style.width = '300px';
-        });
-        num1.addEventListener('mouseout', function(){
-            num1.style.width = '200px';
-        });
+const c5 = () => {
+    const year = new Date().getFullYear()
+    const long = []
+    for (let i = 0; i < 12; i++) {
+        const day = new Date(year, i, 1)
+        for (let j = day; j.getMonth() === i; day.setDate(day.getDate() + 1)) {
+            if (day.getDay() === 5) {
+                long.push(day.toDateString())
+            }
+        }
+    }
+setAns(long.join('. '))
+}
 
-        const num2 = document.getElementById('22');
-        num2.addEventListener('mouseover', function(){
-            num2.style.width = '100px';
-        });
-        num2.addEventListener('mouseout', function(){
-            num2.style.width = '200px';
-        });
+const c6 = () => {
+    const year = 2023
+    const long = []
+    for (let i = 0; i < 12; i++) {
+        const day = new Date(year, i, 1)
+        for (let j = day; j.getMonth() === i; day.setDate(day.getDate() + 1)) {
+            if (day.getDay() === 3) {
+                long.push(day.toDateString())
+            }
+        }
+    }
+setAns(long.join('. '))
+}
+
+const c7 = () => {
+    const a = new Date(prompt("first date"))
+    const b = new Date(prompt("secont date"))
+    const neg = Math.abs(a.getTime() - b.getTime())
+    const days = Math.floor(neg / 86400000)
+    setAns(`${days} days difference`)
+}
+
+const c8 = () => {
+    const now = new Date();
+    const end = new Date(now);
+    end.setHours(23, 59, 59, 999);
+    const neg = end.getTime() - now.getTime()
+    const hours = Math.floor(neg / 3600000);
+    const mins = Math.floor((neg % 3600000) / 60000)
+    setAns(`${hours} hours and ${mins} mins remaining until EOD`)
+}
