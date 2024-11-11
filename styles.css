@@ -1,0 +1,57 @@
+@keyframes fadeIn {
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+
+body{
+    gap: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    background-color: lightgrey;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.sq{
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    color: white;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px black;
+    transition: height 0.5s;
+}
+
+.sq:hover{
+    height: 80px;
+}
+
+.letter{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    transition: width 1s;
+}
+
+.button{
+    font-size: 20px;
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: animation;
+}
+.button:hover{
+animation: fadeIn 5s;
+}
